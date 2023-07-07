@@ -582,7 +582,7 @@ left: 42px;
 }
 @media (max-width: 600px) {
   .settings-page {
-    grid-template-columns: (minmax(100px, 1fr));
+    grid-template-columns: minmax(100px, 1fr);
     gap: 10px;
     margin-left: 10px;
     margin-right: 10px;
