@@ -17,7 +17,7 @@
 </head>
 <body>
   <div class="page  d-flex">
-    <!--------------- Start Sidebar ----------------->
+    <!--Start Sidebar-->
     <div class="sidebar bg-white  p-20  po-relative">
       <h3 class="po-relative text-c mt-0">Dashboard</h3>
       <ul>
@@ -71,9 +71,9 @@
         </li>
       </ul>
     </div>
-    <!--------------- Start Content ----------------->
+    <!-- Start Content -->
     <div class="content w-full">
-      <!--------------- Start Head ----------------->
+      <!-- Start Head -->
       <div class="head  bg-white between-flex  p-15">
         <div class="search po-relative">
           <input type="search" placeholder="Type A Keyword" class="p-10 bor-rad-6">
@@ -82,13 +82,13 @@
           <span class="notification po-relative">
             <i class="fa-regular fa-bell fa-lg"></i>
           </span>
-          <img src="imgs/avatar.png" alt="">
+          <a href="profile.html"><img src="imgs/avatar.png" alt="photo"></a>
         </div>
       </div>
-      <!--------------- Start Boxes ----------------------->
+      <!-- Start Boxes-->
       <h1 class="po-relative">Settings</h1>
       <div class="settings-page d-grid m-20 gap-20">
-        <!--------------- Start Site Control Boxes ----------------------->
+        <!-- Start Site Control Boxes-->
         <div class="p-20 bg-white bor-rad-6">
           <h2 class="m-0">Site Control</h2>
           <p class="c-gray fs-15 mt-10">Control The Website If There Is Maintenance</p>
@@ -98,16 +98,14 @@
               <p class="c-gray mb-0 mt-10 fs-15"> Open/Close Website And Type The Reason</p>
             </div>
             <div>
-              <label>
                 <input type="checkbox" class="toggle-checkbox" checked>
                 <div class="toggle-switch"></div>
-              </label>
             </div>
           </div>
           <textarea class="close-message p-10 bor-rad-6 w-full d-block" 
           placeholder="Close Message Content"></textarea>
         </div>
-        <!-------------------------- General Info Boxes ------------------------------>
+        <!-- General Info Boxes -->
         <div class="p-20 bg-white bor-rad-6 general-info">
           <h2 class="m-0">General Info</h2>
           <p class="c-gray fs-15 mt-10 mb-15">General Information About Your Account</p>
@@ -126,7 +124,7 @@
             <a href="#" class="c-blue">Change</a>
           </div>
         </div>
-        <!-------------------------- General Security Info Boxes ------------------------------>
+        <!-- General Security Info Boxes -->
         <div class="p-20 bg-white bor-rad-6">
           <h2 class="m-0">Security Info</h2>
           <p class="c-gray fs-15 mt-10 mb-30">Security Information About Your Account</p>
@@ -142,10 +140,10 @@
               <h3 class="m-0 mb-5 fw-400">Two-Factor Authentication</h3>
               <p class="m-0 fs-14 c-gray">Enable/Disable The Feature</p>
             </div>
-            <label>
+            <div>
               <input type="checkbox" class="toggle-checkbox" checked>
               <div class="toggle-switch"></div>
-            </label>
+            </div>
           </div>
           <div class="news-row  d-flex align-center bor-row-20">
             <div class="info  f-start">
@@ -155,61 +153,61 @@
             <span class="btn-shape bg-eee fs-17 c-black"> Devices</span>
           </div>
         </div>
-        <!-------------------------- General Social Info Boxes ------------------------------>
+        <!--General Social Info Boxes-->
         <div class="p-20 bg-white bor-rad-6 social-info">
           <h2 class="m-0">Social Info</h2>
           <p class="c-gray fs-15 mt-10 mb-15">Social Media Information</p>
           <div class="social-row d-flex align-center mb-15">
             <i class="fa-brands fa-twitter c-gray"></i>
             <input type="text" name="twitter"
-            placeholder="Twitter Username" class="bor-none w-full p-10" />
+            placeholder="Twitter Username" class="bor-none w-full p-10" >
           </div>
           <div class="social-row d-flex align-center mb-15">
             <i class="fa-brands fa-facebook-f c-gray"></i>
             <input type="text" name="face"  
-            placeholder="Facebook Username" class="bor-none w-full p-10" />
+            placeholder="Facebook Username" class="bor-none w-full p-10" >
           </div>
           <div class="social-row d-flex align-center mb-15">
             <i class="fa-brands fa-linkedin c-gray"></i>
             <input type="text" name="Linkedin"
-            placeholder="Linkedin Username" class="bor-none w-full p-10" />
+            placeholder="Linkedin Username" class="bor-none w-full p-10" >
           </div>
           <div class="social-row d-flex align-center mb-15">
             <i class="fa-brands fa-youtube c-gray"></i>
             <input type="text" name="youtube"
-            placeholder="Youtube Username" class="bor-none w-full p-10" />
+            placeholder="Youtube Username" class="bor-none w-full p-10" >
           </div>
         </div>
-        <!-------------------------- General Widgets Control Boxes ------------------------------>
+        <!--General Widgets Control Boxes-->
         <div class="widgets-control  p-20 bg-white bor-rad-6 general">
           <h2 class="m-0">Widgets Control</h2>
           <p class="c-gray fs-15 mt-10 mb-15">Show/Hide Widgets</p>
           <div class="mb-15">
-            <input type="checkbox" id="Quick Draft" checked>
-            <label for="Quick Draft">Quick Draft</label>
+            <input type="checkbox" id="quick-draft" checked>
+            <label for="quick-draft">Quick Draft</label>
           </div>
           <div class="mb-15">
-            <input type="checkbox" id="Yearly Targets" checked>
-            <label for="Yearly Targets">Yearly Targets</label>
+            <input type="checkbox" id="yearly-targets" checked>
+            <label for="yearly-targets">Yearly Targets</label>
           </div>
           <div class="mb-15">
-            <input type="checkbox" id="Tickets Statistics" checked>
-            <label for="Tickets Statistics">Tickets Statistics</label>
+            <input type="checkbox" id="tickets-statistics" checked>
+            <label for="tickets-statistics">Tickets Statistics</label>
           </div>
           <div class="mb-15">
-            <input type="checkbox" id="Latest News">
-            <label for="Latest News">Latest News</label>
+            <input type="checkbox" id="latest-news">
+            <label for="latest-news">Latest News</label>
           </div>
           <div class="mb-15">
-            <input type="checkbox" id="Latest Tasks" >
-            <label for="Latest Tasks">Latest Tasks</label>
+            <input type="checkbox" id="latest-tasks" >
+            <label for="latest-tasks">Latest Tasks</label>
           </div>
           <div class="mb-15">
-            <input type="checkbox" id="Top Search Items" checked>
-            <label for="Top Search Items">Top Search Items</label>
+            <input type="checkbox" id="top-search-items" checked>
+            <label for="top-search-items">Top Search Items</label>
           </div>
         </div>
-        <!-------------------------- General Backup Manager Boxes ------------------------------>
+        <!-- General Backup Manager Boxes -->
         <div class="p-20 bg-white bor-rad-6 general backup-manager">
           <h2 class="m-0">Backup Manager</h2>
           <p class="c-gray fs-15 mt-10">Control Backup Time And Location</p>
@@ -239,7 +237,7 @@
       </div>
     </div>
   </div>
-<!------------------------------------------- End Page ----------------------------------------------------->
+<!-- End Page -->
 
 </body>
 </html>
