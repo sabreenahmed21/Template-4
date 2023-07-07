@@ -1,0 +1,1048 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --blue-color: #0075ff;
+  --blue-alt-color: #0d69d5;
+  --orange-color: #f59e0b;
+  --green-color: #22c55e;
+  --red-color: #f44336;
+  --grey-color: #888;
+}
+
+*:focus {
+  outline-color: var(--red-color);
+}
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+body {
+  background-color: #eee;
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+}
+
+.page {
+  background-color: #f1f5f9;
+  min-height: 100vh;
+}
+
+/******************************************************* Start Sidebar *********************************/
+.sidebar {
+  width: 200px;
+  box-shadow: 0 0 10px #eee;
+}
+.sidebar > h3 {
+  margin-bottom: 50px;
+}
+.sidebar > h3::before {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 80px;
+  height: 2px;
+  transform: translate(-50%);
+  bottom: -15px;
+  left: 50%;
+}
+.sidebar > h3::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 10px;
+  height: 10px;
+  border: black solid 2px;
+  border-radius: 50%;
+  transform: translate(-50%);
+  bottom: -20px;
+  left: 50%;
+}
+.sidebar ul li a {
+  transition: 0.3s;
+  margin-bottom: 5px;
+}
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  background-color: #f6f6f6;
+}
+.sidebar ul span {
+  padding-left: 16px;
+}
+@media (max-width: 767px) {
+  .sidebar {
+    width: 60px;
+    padding: 10px;
+  }
+  .sidebar > h3,
+  .sidebar > h3::before,
+  .sidebar > h3::after {
+    display: none;
+  }
+  .sidebar ul  span {
+    display: none;
+  }
+}
+
+/************************************** Start Content *************************************/
+.content {
+  overflow: hidden;
+}
+
+/**************************** Start Scrollbar ***************************************/
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--blue-color);
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: var(--blue-alt-color);
+}
+
+/********************************** Start Head **************************************/
+.head .search::before {
+  font-family: var(--fa-style-family-classic);
+  content: "\f002";
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  color: var(--grey-color);
+}
+.head input {
+  border: 1px solid #CCC;
+  padding-left: 30px;
+  width: 160px;
+  transition: width 0.3s;
+}
+.head input:focus {
+  width: 200px;
+}
+.head input:focus::placeholder {
+  color: transparent;
+  /*opacity : 0*/
+}
+.head  .icons .notification::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--red-color);
+  border-radius: 50%;
+  right: -6px;
+  top: -6px;
+}
+.head  .icons img {
+  width: 32px;
+  height: 32px;
+  margin-left: 15px;
+}
+/************************************* Start Page ********************************/
+.page h1 {
+  margin: 20px 20px 40px;
+}
+.page h1::after,
+.page h1::before {
+  content: "";
+  height: 3px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+.page h1::before {
+  background-color: white;
+  width: 130px;
+}
+.page h1::after {
+  background-color: black;
+  width: 50px;
+}
+.wrapper {
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  margin-left: 20px;
+  margin-right: 20px;
+}
+@media (max-width: 767px) {
+  .wrapper {
+    grid-template-columns: minmax(200px, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 10px;
+  }
+}
+
+/********************************* Start Welcome *************************************************/
+.welcome {
+  overflow: hidden;
+}
+.welcome .intro img {
+  width: 240px;
+}
+.welcome .avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-top: -35px;
+  margin-left: 20px;
+}
+.welcome .body {
+  border-top:1px solid  #EEE;
+  border-bottom:1px solid  #EEE;
+}
+.welcome .body > div {
+  flex: 1;
+}
+.welcome .visit {
+  margin: 0 15px 15px auto;
+  transition: 0.3s;
+}
+.welcome .visit:hover {
+  background-color: var(--blue-alt-color);
+}
+@media (max-width: 767px) {
+  .welcome .intro {
+    padding-bottom: 30px;
+  }
+  .welcome .body > div:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+/********************** Start Quick Draft Box ********************/
+.quickdraft textarea {
+  resize: none;
+}
+.quickdraft .save {
+  margin-left: auto;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.quickdraft  .save:hover {
+  background-color: var(--blue-alt-color);
+}
+
+/*********************** Start Yearly Targets Box ******************/
+.targets .targets-row .icon {
+  width: 80px;
+  height: 80px;
+  margin-right: 15px;
+}
+.targets .details {
+  flex: 1;
+}
+.targets .details .progress {
+  height: 5px;
+}
+.targets .details .progress > span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+.targets .details .progress > span span {
+  position: absolute;
+  bottom: 16px;
+  right: -16px;
+  padding: 2px 5px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.targets .details .progress > span span::after {
+  content: " ";
+  position: absolute;
+  border-color: transparent ;
+  border-width: 5px;
+  border-style: solid;
+  bottom: -10px;
+  transform: translateX(-50%);
+  left: 50%;
+}
+@media (max-width : 992px),
+(min-width : 1200px) {
+  .targets .details span:nth-of-type(2) {
+    margin-bottom: 27px;
+  }
+}
+.targets .details .progress > .c-blue span::after{
+  border-top-color:var(--blue-color) ;
+}
+.targets .details .progress > .c-orange  span::after{
+  border-top-color:var(--orange-color) ;
+}
+.targets .details .progress > .c-green span::after {
+  border-top-color:var(--green-color);
+}
+.c-blue .icon,
+.c-blue .progress {
+  background-color: rgb(0 117 255 / 20%);
+}
+.c-orange .icon,
+.c-orange .progress {
+  background-color:rgb(245 158 11 / 20%) ;
+}
+.c-green .icon,
+.c-green .progress {
+  background-color: rgb(34 197 94 / 20%);
+}
+
+/********************* Start Tickets Statistics Box **********************/
+.tickets-statistics .box {
+  border: 1px solid #c7c3c3;
+}
+.tickets-statistics .boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width : 600px) {
+  .tickets-statistics .boxes {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/*********************** Start Latest News Box **********************/
+.latest-news .news-row img {
+  width: 100px;
+  border-radius: 6px;
+  margin-right: 15px;
+}
+@media (max-width : 600px) {
+  .latest-news .news-row {
+    display: block;
+  }
+  .latest-news .news-row .info {
+    text-align: center;
+    margin: 10px 0;
+  }
+  .latest-news .news-row .info h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+}
+
+/*********************** Start Latest Tasks Box **********************/
+.latest-tasks i {
+  cursor: pointer;
+}
+.latest-tasks i:hover {
+  color: var(--red-color);
+}
+.latest-tasks  .latest-tasks-row:nth-of-type(4) {
+  opacity: 0.3;
+}
+
+/*********************** Start Top Search Items Box **********************/
+.latest-uploads img {
+  width: 40px;
+  margin-right: 7px;
+}
+
+/*********************** Start Latest Uploads Box **********************/
+.projects {
+  margin: 20px;
+}
+
+/*********************** Start Last Project Progress Box **********************/
+.last-project .launch-icon {
+  width: 150px;
+  opacity: 0.2;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.last-project ul::before {
+  content: "";
+  position: absolute;
+  left: 11px;
+  width: 2px;
+  height: 100%;
+  background-color: var(--blue-color);
+}
+.last-project ul li::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid white;
+  outline: 2px solid var(--blue-color);
+  margin-right: 15px;
+  z-index: 1;
+}
+.last-project ul .done::before {
+  background-color: var(--blue-color);
+}
+.last-project ul .current::before {
+  animation-name: change-color;
+  animation-iteration-count: infinite;
+  animation-duration: 0.9s;
+  animation-direction: alternate;
+}
+@keyframes change-color {
+  to {
+    background-color: var(--blue-color);
+  }
+}
+
+/*********************** Start Reminders Box **********************/
+.reminders li span:first-child::before {
+  content: " ";
+  position: absolute;
+
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  bottom: 18px;
+}
+.reminders li span:first-child::after {
+  content: " ";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  transform: translateX(-50%);
+  bottom: 0px;
+  left: 19px;
+}
+.reminders li .bg-c-blue::before,
+.reminders li .bg-c-blue::after{
+  background-color: var(--blue-color);
+}
+.reminders li .bg-c-green::before,
+.reminders li .bg-c-green::after{
+  background-color: var(--green-color);
+}
+.reminders li .bg-c-orange::before,
+.reminders li .bg-c-orange::after{
+  background-color: var(--orange-color);
+}
+.reminders li .bg-c-red::before,
+.reminders li .bg-c-red::after{
+  background-color: var(--red-color);
+}
+
+/*********************** Start Latest Post Box **********************/
+.latest-post-row img{
+  width: 50px;
+}
+
+/*********************** Start Social Media Stats Box **********************/
+.social-media-stats .row {
+  background-color: #D2ECFC;
+}
+.social-media-stats i {
+  width: 50px;
+  height: 51px;
+  color: white;
+  font-size: 35px;
+  padding: 23px 0;
+}
+.social-media-stats .fa-twitter,
+.social-media-stats .btn-follow{
+  background-color: #1DA1F2;
+  color: white;
+}
+.social-media-stats .paragraph-twitt {
+  color: #1DA1F2;
+}
+.social-media-stats .fa-facebook-f,
+.social-media-stats .btn-like{
+  background-color: #1877F2;
+  color: white;
+}
+.social-media-stats .paragraph-face {
+  color: #256ef5;
+}
+.social-media-stats .fa-youtube,
+.social-media-stats .btn-subscribe{
+  background-color: red;
+  color: white;
+}
+.social-media-stats .paragraph-youtube {
+  color: red ;
+}
+.social-media-stats .fa-linkedin,
+.social-media-stats .btn-linkedin{
+  background-color: #0077B5;
+  color: white;
+}
+.social-media-stats .paragraph-linkedin {
+  color: #0077C2 ;
+}
+.social-media-stats .row-youtube {
+  background-color: #FFCCCC;
+}
+
+/*********************** Start Projects Box **********************/
+.projects table img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 2px;
+  background-color: white;
+}
+.projects table img:not(:first-child) {
+  margin-left: -25px;
+}
+.projects .responsive-table {
+  overflow-x: auto;
+}
+.projects table {
+  min-width: 1000px;
+  border-spacing: 0;
+}
+.projects thead td {
+  background-color: #eee;
+  font-weight: bold;
+}
+.projects table td {
+  padding: 15px;
+}
+.projects tbody td {
+  border-bottom: 1px solid #EEE;
+  border-left: 1px solid #EEE;
+
+}
+.projects table tbody tr td:last-child {
+  border-right: 1px solid #eee;
+}
+.projects table .label {
+  font-size: 13px;
+}
+.projects tbody tr:hover td {
+  background-color: #faf7f7;
+}
+.projects table .label {
+  cursor: pointer;
+}
+
+/************************************************ End Content ******************************************/
+/*********************************************** Start Settings ****************************************/
+.toggle-checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.toggle-switch {
+  background-color: #ccc;
+  width: 70px;
+  height: 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+.toggle-switch::before {
+  font-family: var(--fa-style-family-classic);
+  content: "\f00d";
+  font-weight: 900;
+  position: absolute;
+  background-color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: gray;
+  top: 2px;
+  left: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.toggle-checkbox:checked + .toggle-switch {
+  background-color: var(--blue-color);
+}
+.toggle-checkbox:checked + .toggle-switch::before {
+content:  "\f00c";
+position: absolute;
+left: 42px;
+}
+.settings-page {
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+.settings-page textarea {
+  border: 1px #CCC solid;
+  resize: none;
+  height: 140px;
+}
+@media (max-width: 600px) {
+  .settings-page {
+    grid-template-columns: (minmax(100px, 1fr));
+    gap: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+.general-info input{
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.general-info .email {
+  display: inline-flex;
+  width: calc(100% - 75px);
+  margin-right: 10px;
+}
+.social-info .social-row {
+  border: #CCC solid 1px;
+  border-radius: 7px;
+  background-color: #eee;
+}
+.social-info .social-row i {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-info .social-row input {
+  border-left: #CCC solid 2px;
+  background-color: #eee;
+  outline: none;
+}
+.social-info > .social-row:focus-within i{
+  color: black;
+}
+
+.general input {
+  transform: scale(1.3);
+  cursor: pointer;
+}
+.general label {
+  font-size: 18px;
+  cursor: pointer;
+  padding-left: 5px;
+}
+.general input[type=checkbox],
+.general input[type="radio"]{
+  accent-color: var(--blue-color);
+}
+.general form input {
+  transform: scale(1.7);
+}
+
+.backup-manager ul {
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+@media (max-width: 767px) {
+  .backup-manager ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.backup-manager ul li {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px;
+}
+.backup-manager li:focus {
+  border-color: var(--blue-color);
+  color: var(--blue-color);
+}
+
+/*********************************************** End Settings ****************************************/
+/************************************************ Start Profile ****************************************/
+.profile .information {
+  flex-basis: 20%;
+}
+.profile .information-box {
+  flex-basis: 80%;
+}
+.information img {
+  width: 100px;
+}
+.profile .progress {
+  width: 140px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: #e0e0e0; 
+  margin: 0 auto;
+}
+.profile .progress-bar {
+  height: 100%;
+  border-radius: 6px;
+  background-color: var(--blue-color); 
+}
+.profile .information-row {
+  flex-wrap: wrap;
+  border-bottom:1px solid #eee ;
+  transition: 0.3s;
+}
+.profile .information-row > div {
+  min-width: 250px;
+  padding: 10px 0 0;
+}
+.profile .information-row:hover {
+  background-color: #f9f9f9;
+}
+.profile  .information-row .toggle-switch {
+  height: 23px;
+}
+.profile  .information-row .toggle-switch::before {
+  width: 21px;
+  height: 19px;
+}
+.profile-page {
+  display: flex;
+}
+.profile-page .latest-activities {
+  flex-basis: 65%;
+}
+.profile-page .my-skills {
+  flex-basis: 33%;
+}
+@media (max-width: 767px) {
+  .profile-page{
+    display: block;
+  }
+}
+.profile-page .skills-row span {
+  display: inline-block;
+  margin-top: 10px;
+}
+.profile-page .skills-row:not(:last-child) {
+    padding-bottom: 20px;
+}
+.profile-page .latest-activities .activities-row img{
+  width: 80px;
+}
+@media (max-width: 600px) {
+  .profile-page  .latest-activities .activities-row{
+    display: block;
+    text-align: center;
+  }
+  .profile-page  .latest-activities .activities-row .info {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+}
+
+/*********************************************** End Profile ****************************************/
+/************************************************ Start Projects ****************************************/
+.projects {
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  margin-left: 20px;
+  margin-right: 20px;
+}
+@media (max-width: 767px) {
+  .projects {
+    grid-template-columns: minmax(200px, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 10px;
+  }
+}
+.projects-divs {
+  overflow: hidden;
+}
+.projects-divs .body {
+  border-top:1px solid  #EEE;
+  border-bottom:1px solid  #EEE;
+}
+@media (max-width: 767px) {
+  .projects-divs .intro {
+    padding-bottom: 30px;
+  }
+  .projects-divs .body > div:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+.projects .projects-divs img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px white solid;
+}
+.projects .projects-divs img:not(:first-child) {
+  margin-left: -20px;
+}
+.projects .projects-divs .body .span-row span {
+  display: inline-block;
+  margin-top: 10px;
+}
+.projects .progress {
+  width: 200px;
+  height: 10px;
+  border-radius: 6px;
+  background-color: #e0e0e0; 
+}
+.projects .progress-bar {
+  height: 100%;
+  border-radius: 6px;
+  background-color: var(--red-color); 
+}
+
+/*********************************************** End Projects ****************************************/
+/************************************************ Start Courses ****************************************/
+.courses-page {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin-left: 20px;
+  margin-right: 20px;
+}
+@media (max-width: 767px) {
+  .courses-page {
+    grid-template-columns: minmax(200px, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 10px;
+  }
+}
+.courses-page  .courses-row .intro img:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.courses-page  .courses-row .intro img:nth-child(2) {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 50%;
+  left: 4%;
+  top: 20px;
+}
+.courses-page  .courses-row .info {
+  border-top: 2px solid #eee;
+}
+.courses-page  .courses-row .info .title {
+  position: absolute;
+  font-size: 13px;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*********************************************** End Courses ****************************************/
+/************************************************ Start Friends ****************************************/
+.friends-page {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin-left: 20px;
+  margin-right: 20px;
+}
+@media (max-width: 767px) {
+  .friends-page {
+    grid-template-columns: minmax(200px, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 10px;
+  }
+}
+.friends-page .friends-div .intro  .fa-phone,
+.friends-page .friends-div .intro .fa-message {
+  background: #eee;
+  width: 25px;
+  height: 25px;
+  padding: 6px;
+  border-radius: 50%;
+  margin-right: 5px;
+  color: gray;
+  font-size: 13px;
+}
+.friends-page .friends-div .intro .fa-phone:hover,
+.friends-page .friends-div .intro .fa-message:hover {
+  color: white;
+  background-color: var(--blue-color);
+  cursor: pointer;
+}
+.friends-page .friends-div .intro img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  display: block;
+}
+.friends-page .friends-div .intro .text {
+  padding: 0;
+}
+.friends-page .friends-div .content{
+  border-top:1px solid  #EEE;
+  border-bottom:1px solid  #EEE;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.friends-page .friends-div .content .icons{
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.friends-page .friends-div .info {
+  padding: 10px 0;
+}
+
+/*********************************************** End Friends ****************************************/
+/************************************************ Start Files ****************************************/
+.files-page .files-stats{
+  min-width: 260px;
+}
+.files-page .files-stats .icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  background: aliceblue;
+  align-items: center;
+  margin-right: 10px;
+}
+.files-page .files-stats .size {
+  margin: auto;
+}
+.files-page .files-stats .upload {
+  transition: 0.3;
+}
+.files-page .files-stats .upload:hover {
+  background-color: var(--blue-alt-color);
+}
+.files-page .files-stats .upload:hover i {
+  animation: up-to-down 0.6s infinite ;
+}
+@keyframes up-to-down {
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+.files-page .files-content {
+  flex: 1;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.files-page .files-content img {
+  width: 64px;
+  height: 64px;
+}
+.files-page .files-content .info {
+  border-top: 1px solid #eee;
+}
+.files-page {
+  flex-direction: row-reverse;
+  align-items: flex-start;
+}
+@media (max-width: 767px) {
+  .files-page {
+    flex-direction: column;
+    align-items: normal;
+  }
+}
+
+/*********************************************** End Files ****************************************/
+/************************************************ Start plans ****************************************/
+.plans-page {
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  margin-left: 20px;
+  margin-right: 20px;
+}
+@media (max-width: 767px) {
+  .plans-page {
+    grid-template-columns: minmax(200px, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 10px;
+  }
+}
+.plans-page .plans-div .intro {
+  border: 4px white solid;
+  padding: 20px 0;
+}
+.plans-page .div-1 .intro {
+  outline: 4px var(--green-color) solid;
+}
+.plans-page .div-2 .intro {
+  outline: 4px var(--blue-color) solid;
+}
+.plans-page .div-3 .intro {
+  outline: 4px var(--orange-color) solid;
+}
+.plans-page .plans-div .intro div {
+  font-size: 42px;
+}
+.plans-page .plans-div .content-row .fa-info {
+  background: gray;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  border-radius: 50%;
+  color: white;
+  font-size: 11px;
+  text-align: center;
+}
+.plans-page .plans-div .content-row .fa-info:hover {
+  cursor: pointer;
+}
+
+/************************************************ End Page ****************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
